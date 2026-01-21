@@ -1,2 +1,1 @@
-This project applies Natural Language Processing (NLP) techniques to predict user review ratings based on textual reviews. Using product-level data containing product name, user-written review text, and a 1–5 star rating, the model learns to map natural language sentiment and context to discrete rating categories.
-A fine-tuned BERT-based multi-class classification model is used to automatically score user reviews, enabling scalable sentiment understanding and supporting applications such as review moderation, customer feedback analysis, and product quality monitoring.
+
