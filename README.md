@@ -32,7 +32,7 @@ Attention masks indicate which tokens the model should focus on and which to ign
 Used 10,000 records for initial training due to dataset size.
 Confusion matrix shows the model predicts class '4' well, but performs poorly on other classes.
 
-<img width="560" height="440" alt="image" src="https://github.com/user-attachments/assets/7346869b-0659-4eb8-8fd5-c0a87829710a" />
+<img width="550" height="398" alt="image" src="https://github.com/user-attachments/assets/3c441f38-9452-4565-9644-e6b6e837bd9a" />
 
 Training data is skewed: over 50% of reviews are class '4', so the model naturally tends to predict '4'.
 
