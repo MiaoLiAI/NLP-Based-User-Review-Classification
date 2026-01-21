@@ -4,8 +4,15 @@ BERT is particularly effective for short to medium-length text and excels at cla
 
 
 First Step：
-
-
+Download dataset：https://d396qusza40orc.cloudfront.net/phoenixassets/amazon_baby.csv
+<img width="835" height="390" alt="image" src="https://github.com/user-attachments/assets/10f4f44b-5aeb-454c-8838-e9083a6227bf" />
+Second Step：
+Text processing：this include lower capitall text, remove punctuations, null, etc;
+Third Step:
+Applied BERT model to tokenize the text (BertTokenizer.from_pretrained("bert-base-uncased"))
 <img width="2284" height="770" alt="image" src="https://github.com/user-attachments/assets/bd6d8095-63ae-46bf-83f0-fb68a8563e4a" />
-
+Fourth Setp:
+Convert all the text tokens into ids, and 
+# cleaned_data['token_id'] = cleaned_data['review_token'].apply(lambda x: tokenizer.convert_tokens_to_ids(x))
+# cleaned_data['cls_token_sep_id'] = cleaned_data['review_token'].apply(lambda x: tokenizer.build_inputs_with_special_tokens(x))
 
