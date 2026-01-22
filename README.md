@@ -42,7 +42,10 @@ The training set is skew which brings the bias to the model that the model will 
 We can use stratified sampling + class weight loss method to let the model learn more for type '0-3'.
 This is the comparison with/without  'class weight loss'
 confustion metrics comparision 
-
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/a3e47432-a19d-410e-ae94-82b55caf96f7" width="45%" alt="Before" />
+  <img src="https://github.com/user-attachments/assets/1ea9d691-413b-45e6-864c-dd9ad95ebf67" width="45%" alt="After" />
+</p>
 
 accuracy comparision
 
