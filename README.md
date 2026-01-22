@@ -36,4 +36,18 @@ Training data is skewed: over 50% of reviews are class '4', so the model natural
 
 <img width="228" height="191" alt="image" src="https://github.com/user-attachments/assets/6a12d1cc-7fac-48de-b5b2-2bbe4756f7b8" />
 
+**Training Set Bias**
+The training set is skew which brings the bias to the model that the model will tned to make more classfy on type'4'. We can also use stratified sampling which makes the traing set has equal number for each type. This can improve the model have better perofrmance on '0-3'. However, this model is not ideal for the reality. In real word, the model will have bad performance on type '4' since this product has over 60% type'4' rating.
+
+We can use stratified sampling + class weight loss method to let the model learn more for type '0-3'.
+This is the comparison with/without  'class weight loss'
+confustion metrics comparision 
+
+
+accuracy comparision
+
+
+ loss curve & leanring curve display
+ 
+
 
