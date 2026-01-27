@@ -37,20 +37,36 @@ Training data is skewed: over 50% of reviews are class '4', so the model natural
 <img width="228" height="191" alt="image" src="https://github.com/user-attachments/assets/6a12d1cc-7fac-48de-b5b2-2bbe4756f7b8" />
 
 **Training Set Bias**
-The training set is skew which brings the bias to the model that the model will tned to make more classfy on type'4'. We can also use stratified sampling which makes the traing set has equal number for each type. This can improve the model have better perofrmance on '0-3'. However, this model is not ideal for the reality. In real word, the model will have bad performance on type '4' since this product has over 60% type'4' rating.
 
-We can use stratified sampling + class weight loss method to let the model learn more for type '0-3'.
-This is the comparison with/without  'class weight loss'
-confustion metrics comparision 
-<p float="left">
-<img width="604" height="657" alt="image" src="https://github.com/user-attachments/assets/4be727f5-8c0a-45aa-9c2c-5bf06815d4c3" />
-<img width="628" height="664" alt="image" src="https://github.com/user-attachments/assets/9b478d64-9ba4-46fd-98cb-d7a49b5f586c" />
-</p>
+The training set is skewed, with over 50% of reviews in class '4', which causes the model to bias toward predicting '4'.
 
-accuracy comparision
+Stratified sampling can balance the training set to improve performance on classes '0–3', but this may not reflect real-world distribution (type '4' is still >60% in reality).
 
+Solution:
 
- loss curve & leanring curve display
+Use stratified sampling + class-weighted loss to let the model learn more from minority classes (type '0–3') while keeping majority class distribution realistic.
+
+Comparison of confusion matrices with and without class-weighted loss:
+
+<p float="left"> <img width="300" height="328" src="https://github.com/user-attachments/assets/4be727f5-8c0a-45aa-9c2c-5bf06815d4c3" /> <img width="300" height="328" src="https://github.com/user-attachments/assets/9b478d64-9ba4-46fd-98cb-d7a49b5f586c" /> </p>
+
+Softmax Probability Adjustment for Imbalanced Classes
+
+In an imbalanced classification scenario, the model tends to predict the majority class most of the time. To improve minority class recall without changing the training distribution, we can adjust the probabilities after the softmax layer during inference:
+
+Softmax: Converts the model's logits into probabilities for each class.
+
+Adjustment: Multiply minority class probabilities by a factor >1 (e.g., 1.2) and then renormalize so the probabilities sum to 1.
+
+Argmax Prediction: The class with the highest adjusted probability becomes the predicted label.
+
+Effect:
+
+Minority class probabilities are effectively “boosted,” making the model more likely to predict them.
+
+Majority class probabilities slightly decrease, but the overall distribution remains interpretable.
+
+This is equivalent to lowering the “implicit threshold” for minority class prediction, improving recall/F1 without retraining or oversampling.
  
 
 
