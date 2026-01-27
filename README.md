@@ -43,8 +43,8 @@ We can use stratified sampling + class weight loss method to let the model learn
 This is the comparison with/without  'class weight loss'
 confustion metrics comparision 
 <p float="left">
-  <img src="https://github.com/user-attachments/assets/a3e47432-a19d-410e-ae94-82b55caf96f7" width="45%" alt="Before" />
-  <img src="https://github.com/user-attachments/assets/1ea9d691-413b-45e6-864c-dd9ad95ebf67" width="45%" alt="After" />
+  <img width="613" height="486" alt="image" src="https://github.com/user-attachments/assets/57462d34-4661-4c8a-84da-5b1733255f35" />
+<img width="628" height="664" alt="image" src="https://github.com/user-attachments/assets/9b478d64-9ba4-46fd-98cb-d7a49b5f586c" />
 </p>
 
 accuracy comparision
